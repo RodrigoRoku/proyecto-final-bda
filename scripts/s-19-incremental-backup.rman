@@ -1,0 +1,7 @@
+
+
+connect target "c##tana_bkp/tana_bkp as sysbackup"
+
+#backup nivel 1 a partir de las 02:00 cada  2 horas
+
+backup as backupset incremental level 1 database;

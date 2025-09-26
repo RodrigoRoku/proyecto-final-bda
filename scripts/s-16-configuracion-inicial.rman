@@ -1,0 +1,19 @@
+#@Author:          Rodrigo Tapia Navarro
+#@Fecha creaciòn   09/12/24
+#@Descripciòn      script para configurar RMAN y generar el primer backup de la base.
+
+connect target "c##tana_bkp/tana_bkp as sysbackup"
+
+configure default device type to disk;
+
+configure channel 1 device type disk clear;
+
+configure maxsetsize to 2g;
+
+configure controlfile autobackup format for device type disk clear;
+
+configure snapshot controlfile name to '/proyecto-final-bda/disks/backups/backup01/snapcf_rodrigo.f';
+
+#backup inicial
+
+backup database plus archivelog tag emarket_full_01;

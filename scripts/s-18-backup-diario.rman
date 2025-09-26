@@ -1,0 +1,8 @@
+
+connect target "c##tana_bkp/tana_bkp as sysbackup"
+
+#backup diario nivel 0, cada dia a las 00:00.
+
+backup as backupset incremental level 0 database;
+#backup as backupset incremental level 0 database;
+#backup as backupset incremental level 0 database;
